@@ -8,6 +8,7 @@ export const getProductList = async (req:any, res:any) => {
     const data:any = await Product.find();
     res.send(data);
   };
+
 // Get product by ID
 export const getProduct = async (req:express.Request, res:express.Response) => {
     const product: any = req.params;
@@ -23,6 +24,7 @@ export const getProduct = async (req:express.Request, res:express.Response) => {
     }
   };
 
+  // Create product
   export const createProduct = async (req:any, res:any) => {
     const request: ProdcutStructure = req.body;
     console.log(JSON.stringify(request))
@@ -37,21 +39,7 @@ export const getProduct = async (req:express.Request, res:express.Response) => {
     });
   };
 
-
-//   export const updateProduct = async (req:any, res:any) => {
-//     const product: ProdcutStructure = req.body;
-
-//     const data:any = await Product.findById(product.id);
-//     if(product.productName) data.productName = product.productName;
-
-//     const result = await data.save();
-//     res.send(result);
-    
-//   };
-
-
 //Update product by ID 
-
 export const updateProduct = async (req:express.Request, res:express.Response) => {
     const product: any = req.params;
     const productBody: ProdcutStructure = req.body;
@@ -66,12 +54,10 @@ export const updateProduct = async (req:express.Request, res:express.Response) =
       res.send(result);
     } catch (error) {
         res.send("error")
-    }
-     
+    }     
   };
 
   // Delete Product By ID
-
   export const deleteProduct = async (req:any, res:any) => {
     const product: ProdcutStructure = req.params;
 

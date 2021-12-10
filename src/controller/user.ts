@@ -10,7 +10,6 @@ export const getUserList = async (req:any, res:any) => {
 }
 
 // get by ID
-
 export const getUser = async (req:any, res:any) => {
     const user: UserStructure = req.params;
 
@@ -34,7 +33,6 @@ export const createUser = async (req:any, res:any) => {
 };
 
 // put
-
 export const updateUser = async (req:any, res:any) => {
     const user: UserStructure = req.params;
     const userBody: UserStructure = req.body;
@@ -49,9 +47,7 @@ export const updateUser = async (req:any, res:any) => {
     res.send(result);
 };
 
-
 // Delete 
-
 export const deleteUser = async (req:any, res:any) => {
     const user: UserStructure = req.params;
 

@@ -10,8 +10,8 @@ import userRoute from './routes/user';
 dotenv.config();
 
 if (!process.env.PORT) {
-console.log(`Error to get ports`);
-process.exit(1);
+  console.log(`Error to get ports`);
+  process.exit(1);
 }
 
 // Connection for mongo db
