@@ -2,7 +2,6 @@
 import express from 'express';
 import { Product as ProdcutStructure } from '../interface/productInf';
 import Product  from "../model/product";
-import products from '../model/product';
 
 export const getProductList = async (req:any, res:any) => {
     const data:any = await Product.find();
@@ -28,7 +27,7 @@ export const getProduct = async (req:express.Request, res:express.Response) => {
   export const createProduct = async (req:any, res:any) => {
     const request: ProdcutStructure = req.body;
     console.log(JSON.stringify(request))
-    let prod = new products(request);
+    let prod = new Product(request);
     prod.save((err:any, result:any) => {
       if (err) {
         res.send("Error!");
