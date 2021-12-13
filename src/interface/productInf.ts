@@ -1,4 +1,5 @@
 export interface Product {
+    user: string;
     id: number | null;
     productName: string;
     productCode: string;

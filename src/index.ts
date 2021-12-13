@@ -25,7 +25,9 @@ mongoose.connect(uri, (err: any) => {
   }
 });
 
-const PORT: number = parseInt(process.env.PORT as string, 10);
+const PORT: number = parseInt(process.env.Port as string, 10);
+console.log(PORT);
+
 
 const app = express();
 app.use(helmet());
@@ -45,8 +47,3 @@ mainRouter.use("/product", productRoute);
 mainRouter.use("/user", userRoute);
 
 app.use("/api", mainRouter);
-
-
-
-
-
