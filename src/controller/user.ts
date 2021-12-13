@@ -1,7 +1,6 @@
 import express from "express";
 import { User as UserStructure } from '../interface/userInf'
 import User from "../model/user";
-import users from '../model/user';
 
 // get
 export const getUserList = async (req:any, res:any) => {
@@ -21,7 +20,7 @@ export const getUser = async (req:any, res:any) => {
 export const createUser = async (req:any, res:any) => {
     const request: UserStructure = req.body;
     console.log(JSON.stringify(request))
-    let user = new users(request);
+    let user = new User(request);
     user.save((err:any, result:any) => {
         if (err) {
             res.send("Error!");
