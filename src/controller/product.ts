@@ -19,7 +19,7 @@ export const getProduct = async (req:express.Request, res:express.Response) => {
 
             
     } catch (error) {
-       res.send('error');
+       console.error("error");
     }
   };
 
@@ -52,7 +52,7 @@ export const updateProduct = async (req:express.Request, res:express.Response) =
       const result = await data.save();
       res.send(result);
     } catch (error) {
-        res.send("error")
+        console.error("Error");
     }     
   };
 
