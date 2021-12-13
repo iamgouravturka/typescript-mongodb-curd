@@ -28,7 +28,7 @@ findEven.then( ( value ) => {
     console.log( 'Resolved-2:', value + 1);  
 }).catch( ( error ) => {
     // (parameter) error: any
-    console.log( 'Rejected:', error);  
+    console.error( 'Rejected:', error);  
 }).finally( () => {
     console.log( 'Completed!' );
 })
