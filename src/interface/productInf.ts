@@ -1,4 +1,5 @@
 export interface Product {
+    rating: string;
     user: string;
     id: number | null;
     productName: string;

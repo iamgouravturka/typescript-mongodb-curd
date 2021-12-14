@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const RatingSchema = new Schema ({
     id: {type: mongoose.Schema.Types.ObjectId, required: false},
     review: String,
-    star: Number
+    star: String,
 });
 
 

@@ -12,7 +12,11 @@ import {
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user"
-  },
+    },
+    rating: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "rating"
+    }
   });
 
 const Product = mongoose.model("Product", ProductSchema);
