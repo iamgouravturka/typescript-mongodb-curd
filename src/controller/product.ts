@@ -4,7 +4,11 @@ import { Product as ProdcutStructure } from '../interface/productInf';
 import Product  from "../model/product";
 
 export const getProductList = async (req:any, res:any) => {
-  const data:any = await Product.find().populate('rating');
+  const data:any = await Product.find().populate({path:'user',
+populate: {
+  path: 'favorite'
+}
+});
   res.send(data);
 };
 
@@ -14,7 +18,7 @@ export const getProduct = async (req:express.Request, res:express.Response) => {
   try {
     if(!product.id)
         return res.status(500).send("Error")
-    const data:any = await Product.findById({_id: product.id}).populate('rating')
+    const data:any = await Product.findById({_id: product.id}).populate('user')
     res.send(data);
           
     }catch (error) {
