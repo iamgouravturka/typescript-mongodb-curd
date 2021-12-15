@@ -4,7 +4,7 @@ import User from "../model/user";
 
 // get
 export const getUserList = async (req:any, res:any) => {
-    const data:any = await User.find();
+    const data:any = await User.find().populate('favorite');
     res.send(data);
 }
 
@@ -12,7 +12,7 @@ export const getUserList = async (req:any, res:any) => {
 export const getUser = async (req:any, res:any) => {
     const user: UserStructure = req.params;
 
-    const data:any = await User.findById({_id: user.id});
+    const data:any = await User.findById({_id: user.id}).populate('favorite');
     res.send(data);
 }
 

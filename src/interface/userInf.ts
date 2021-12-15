@@ -1,4 +1,5 @@
 export interface User {
+    favorite: string;
     id: number | null;
     name: string;
     gender: string;

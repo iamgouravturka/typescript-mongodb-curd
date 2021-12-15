@@ -6,6 +6,8 @@ import helmet from 'helmet';
 
 import productRoute from './routes/product';
 import userRoute from './routes/user';
+import ratingRoute from './routes/rating';
+import favoriteRoute from './routes/favorite';
 
 dotenv.config();
 
@@ -43,5 +45,7 @@ const mainRouter = express.Router();
 
 mainRouter.use("/product", productRoute);
 mainRouter.use("/user", userRoute);
+mainRouter.use("/rating", ratingRoute);
+mainRouter.use("/favorite", favoriteRoute)
 
 app.use("/api", mainRouter);

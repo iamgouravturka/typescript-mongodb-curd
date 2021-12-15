@@ -7,6 +7,10 @@ const UserSchema = new Schema ({
     gender: String,
     address: String,
     profileImage: String,
+    favorite: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "favorite"
+    },
 });
 
 const User = mongoose.model("user", UserSchema);
