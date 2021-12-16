@@ -9,7 +9,6 @@ export const getFavoriteList = async (req:any, res:any) => {
 }
 
 // get by /:id
-
 export const getFavorite = async (req:any, res:any) => {
     const favorite: FavoriteStructure = req.params;
 
@@ -30,4 +29,24 @@ export const createFavorite = async (req:any, res:any) => {
             res.send(result);
         }
     });
+}
+
+// Put
+export const updateFavorite = async (req:any, res:any) => {
+    const favorite: FavoriteStructure = req.params;
+    const favoriteBody: FavoriteStructure = req.body;
+
+    const data:any = await Favorite.findByIdAndUpdate({_id: favorite.id});
+    if (favoriteBody.name) data.name = favoriteBody.name;
+
+    const result = await data.save();
+    res.send(result);
+}
+
+//delete
+export const deleteFavorite = async (req:any, res:any) => {
+    const favorite: FavoriteStructure = req.params;
+
+    const result:any = await Favorite.findByIdAndDelete({_id: favorite.id});
+    res.send(result);
 }
